@@ -1,0 +1,25 @@
+.contenedor-formulario{
+    background: $gris;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    .formulario{
+        .t-bold{
+            font-weight: 500;
+        }
+        button{
+            margin-top: 20px;
+            width: 100%;
+            background-color: #29A0B1;
+            color: #fff;
+        }
+        .descripcion{
+            textarea{
+                height: 300px;
+                min-height: 300px;
+                max-height: 300px;
+            }
+        }
+        
+    }
+}

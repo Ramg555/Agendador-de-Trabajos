@@ -1,0 +1,20 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(162.68deg, #29A0B1 0%, rgba(22, 125, 127, 0.859375) 50%,   
+    rgba(152, 215, 194, 0.937012) 100%);
+    // background: #f2f2f2;
+    background-repeat: no-repeat;
+    font-family: "Open Sans", "Arial";
+    box-sizing: border-box;
+    min-height: 100%;
+    padding-bottom: 20px;
+    p{
+        font-size: 18px;
+    }
+}
+
+$gris: #f2f2f2;
+
+@import "header";
+@import "main";

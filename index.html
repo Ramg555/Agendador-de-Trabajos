@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +7,60 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css//bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Agendador de trabajos</title>
 </head>
 <body>
+    <header class="mb-5">
+        <h2 class="titulo text-center mt-5">Agendador de Trabajos</h2>
+    </header>
+    <div class="main">
+        <div class="container contenedor-formulario">
+            <div class="row formulario ">
+                <div class="col-6">
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <p class="t-bold">Producto</p>
+                            <input style="width: 100%;" type="text" id="producto" name="producto" placeholder="Nombre del producto">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <p class="t-bold">Costo de venta</p>
+                            <input type="text" id="costo-de-venta" name="costo-de-venta" placeholder="$">
+                        </div>
+                        <div class="col-6">
+                            <p class="t-bold">Costo de producción</p>
+                            <input type="text" id="costo-de-produccion" name="costo-de-produccion" placeholder="$">
+                        </div>
+                        
+                    </div>
+                    <p class="t-bold"> Contacto de cliente</p>
+                    <input type="text" id="contacto-clientew" name="contacto-cliente" placeholder="Numero de cliente">
+                    <div class="form-group">
+                        <button type="submit" class="btn d-block">Agregar trabajo pendiente</button>
+                    </div>
+                </div>
+                <div class="col-6 descripcion">
+                    <p class="t-bold">Descripción</p>
+                    <textarea name="descripcion" id="descripcion" class="form-control" ></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+
+
+
+
+
+
+
+
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

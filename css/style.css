@@ -1,1 +1,46 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(162.68deg, #29A0B1 0%, rgba(22, 125, 127, 0.859375) 50%, rgba(152, 215, 194, 0.937012) 100%);
+  background-repeat: no-repeat;
+  font-family: "Open Sans", "Arial";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-height: 100%;
+  padding-bottom: 20px;
+}
+
+body p {
+  font-size: 18px;
+}
+
+.titulo {
+  color: #fff;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.contenedor-formulario {
+  background: #f2f2f2;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+}
+
+.contenedor-formulario .formulario .t-bold {
+  font-weight: 500;
+}
+
+.contenedor-formulario .formulario button {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #29A0B1;
+  color: #fff;
+}
+
+.contenedor-formulario .formulario .descripcion textarea {
+  height: 300px;
+  min-height: 300px;
+  max-height: 300px;
+}
+/*# sourceMappingURL=style.css.map */
