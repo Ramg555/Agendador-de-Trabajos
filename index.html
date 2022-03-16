@@ -17,34 +17,73 @@
     </header>
     <div class="main">
         <div class="container contenedor-formulario">
-            <div class="row formulario ">
+            <div class="row formulario">
                 <div class="col-6">
                     <div class="row mb-3">
                         <div class="col-12">
-                            <p class="t-bold">Producto</p>
+                            <p class="t-semibold">Producto</p>
                             <input style="width: 100%;" type="text" id="producto" name="producto" placeholder="Nombre del producto">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-6">
-                            <p class="t-bold">Costo de venta</p>
+                            <p class="t-semibold">Costo de venta</p>
                             <input type="text" id="costo-de-venta" name="costo-de-venta" placeholder="$">
                         </div>
                         <div class="col-6">
-                            <p class="t-bold">Costo de producción</p>
+                            <p class="t-semibold">Costo de producción</p>
                             <input type="text" id="costo-de-produccion" name="costo-de-produccion" placeholder="$">
                         </div>
                         
                     </div>
-                    <p class="t-bold"> Contacto de cliente</p>
+                    <p class="t-semibold"> Contacto de cliente</p>
                     <input type="text" id="contacto-clientew" name="contacto-cliente" placeholder="Numero de cliente">
                     <div class="form-group">
                         <button type="submit" class="btn d-block">Agregar trabajo pendiente</button>
                     </div>
                 </div>
                 <div class="col-6 descripcion">
-                    <p class="t-bold">Descripción</p>
+                    <p class="t-semibold">Descripción</p>
                     <textarea name="descripcion" id="descripcion" class="form-control" ></textarea>
+                </div>
+            </div>
+        </div>
+        <div class=" mt-5 container contenedor-trabajos"">
+            <div class="row">
+                <div class="col">
+                    <div class="trabajos">
+                        <div class="trabajo">
+                            <div class="row">
+                                <div style="width: 45%;">
+                                    <p class="t-bold">Producto</p>
+                                    <p class="fondo-gris">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <div style="width: 25%;">
+                                    <p class="t-bold">Costo de venta</p>
+                                    <p class="fondo-gris">$500</p>
+                                </div>
+                                <div style="width: 25%;">
+                                    <p class="t-bold">Costo de produccion</p>
+                                    <p class="fondo-gris">$1000</p>
+                                </div>
+                                <button class="cancel-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="row">
+                                <div style="width: 100%;">
+                                    <p class="t-bold">Descripcion</p>
+                                    <p class="fondo-gris">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        Dolorum ab debitis ex neque veritatis ipsa ipsum, eum explicabo consectetur 
+                                        nisi omnis corrupti soluta dolores mollitia earum. Earum placeat veritatis 
+                                        maxime qui deserunt repudiandae delectus repellat fugiat, nisi officia eos sunt.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

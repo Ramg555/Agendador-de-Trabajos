@@ -9,9 +9,14 @@ body{
     box-sizing: border-box;
     min-height: 100%;
     padding-bottom: 20px;
-    p{
+    .t-bold{
         font-size: 18px;
+        font-weight: 600;
     }
+    .t-semibold{
+        font-weight: 500;
+    }
+    
 }
 
 $gris: #f2f2f2;
