@@ -17,7 +17,7 @@
     </header>
     <div class="main">
         <div class="container contenedor-formulario">
-            <div class="row formulario">
+            <form class="row formulario">
                 <div class="col-6">
                     <div class="row mb-3">
                         <div class="col-12">
@@ -28,16 +28,16 @@
                     <div class="row mb-3">
                         <div class="col-6">
                             <p class="t-semibold">Costo de venta</p>
-                            <input type="text" id="costo-de-venta" name="costo-de-venta" placeholder="$">
+                            <input type="text" id="costo-de-venta" name="costoDeVenta" placeholder="$">
                         </div>
                         <div class="col-6">
                             <p class="t-semibold">Costo de producción</p>
-                            <input type="text" id="costo-de-produccion" name="costo-de-produccion" placeholder="$">
+                            <input type="text" id="costo-de-produccion" name="costoDeProduccion" placeholder="$">
                         </div>
                         
                     </div>
                     <p class="t-semibold"> Contacto de cliente</p>
-                    <input type="text" id="contacto-clientew" name="contacto-cliente" placeholder="Numero de cliente">
+                    <input type="text" id="contacto-cliente" name="contactoCliente" placeholder="Numero de cliente">
                     <div class="form-group">
                         <button type="submit" class="btn d-block">Agregar trabajo pendiente</button>
                     </div>
@@ -46,13 +46,13 @@
                     <p class="t-semibold">Descripción</p>
                     <textarea name="descripcion" id="descripcion" class="form-control" ></textarea>
                 </div>
-            </div>
+            </form>
         </div>
-        <div class=" mt-5 container contenedor-trabajos"">
+        <div class=" mt-5 container contenedor-trabajos">
             <div class="row">
                 <div class="col">
-                    <div class="trabajos">
-                        <div class="trabajo">
+                    <div class="trabajos" id="trabajos">
+                        <!-- <div class="trabajo">
                             <div class="row">
                                 <div style="width: 45%;">
                                     <p class="t-bold">Producto</p>
@@ -82,7 +82,7 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
