@@ -37,6 +37,11 @@ class Trabajos {
         this.trabajos = [...this.trabajos, trabajo];
         console.log(this.trabajos);
     }
+
+    eliminarTrabajo(id){
+        this.trabajos = this.trabajos.filter( (trabajo) => trabajo.id !== id)
+        console.log(this.trabajos);
+    }
 }
 class UI{
     mostrarMensaje(mensaje,tipo){
@@ -59,6 +64,72 @@ class UI{
 
     imprimirTrabajos(){
 
+        this.limpiarHTML();
+        // Leer el contenido de la DB
+
+        const objectStore = DB.transaction("trabajos").objectStore("trabajos");
+        objectStore.openCursor().onsuccess = function(e){
+            const cursor = e.target.result;
+            
+            if(cursor){
+                const {producto,costoDeVenta,costoDeProduccion,contactoCliente,descripcion,id} = cursor.value;
+
+                const divTrabajo = document.createElement("div");
+                divTrabajo.classList.add("trabajo");
+                divTrabajo.dataset.id = id;
+
+                divTrabajo.innerHTML = `
+                    <div class="row" id="contenedor-trabajo">
+                        <div style="width: 40%;">
+                            <p class="t-bold">Producto</p>
+                            <p class="fondo-gris">${producto}</p>
+                        </div>
+                        <div style="width: 20%;">
+                            <p class="t-bold">Costo de venta</p>
+                            <p class="fondo-gris">$${costoDeVenta}</p>
+                        </div>
+                        <div style="width: 20%;">
+                            <p class="t-bold">Costo de produccion</p>
+                            <p class="fondo-gris">$${costoDeProduccion}</p>
+                        </div>
+                        <div style="width: 20%;">
+                        <p class="t-bold">Contacto de cliente</p>
+                        <p class="fondo-gris">${contactoCliente}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="width: 100%;">
+                            <p class="t-bold">Descripcion</p>
+                            <p class="fondo-gris">
+                            ${descripcion}
+                            </p>
+                        </div>
+                    </div>
+                `
+                const btnEliminar = document.createElement("button");
+                btnEliminar.onclick = function (){
+                    eliminarTrabajo(id);
+                }
+                btnEliminar.classList.add("cancel-icon");
+                btnEliminar.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>`
+
+                
+                contenedorTrabajos.appendChild(divTrabajo);
+                divTrabajo.appendChild(btnEliminar);
+
+                // Imrprime el siguiente elemento 
+
+                cursor.continue();
+            }
+        }
+    }
+
+    limpiarHTML(){
+        while(contenedorTrabajos.firstChild){
+            contenedorTrabajos.removeChild(contenedorTrabajos.firstChild);
+        }
     }
 }
 const trabajos = new Trabajos();
@@ -109,7 +180,8 @@ function añadirTrabajo(e){
         }
     }
 
-    reiniciarObjeto()
+    ui.imprimirTrabajos();
+    reiniciarObjeto();
 }
 
 function reiniciarObjeto(){
@@ -118,6 +190,24 @@ function reiniciarObjeto(){
     trabajo.costoDeProduccion = "",
     trabajo.contactoCliente = "",
     trabajo.descripcion = ""
+}
+
+function eliminarTrabajo(id){
+    
+    const transaction = DB.transaction(["trabajos"], "readwrite")
+    const objectStore = transaction.objectStore("trabajos");
+
+    objectStore.delete(id);
+
+    transaction.oncomplete = () => {
+        console.log("Trabajo eliminado correctamente");
+        ui.imprimirTrabajos();
+    }
+    transaction.onerror = () => {
+        console.log("Hubo un error en el transaction");
+    }
+
+    
 }
 
 function crearDB(){
@@ -131,7 +221,7 @@ function crearDB(){
     crearDB.onsuccess = function(){
         console.log("DB creada");
         DB = crearDB.result;
-        // ui.imprimirTrabajos();
+        ui.imprimirTrabajos();
     }
 
     // Definir el schema

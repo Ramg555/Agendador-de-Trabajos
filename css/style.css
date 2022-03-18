@@ -54,6 +54,7 @@ body .t-semibold {
 }
 
 .contenedor-trabajos .trabajo {
+  position: relative;
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 30px;
@@ -63,20 +64,24 @@ body .t-semibold {
 }
 
 .contenedor-trabajos .trabajo .fondo-gris {
-  width: auto;
+  width: 100%;
+  height: auto;
+  word-wrap: break-word;
   background: #f2f2f2;
   border-radius: 10px;
   padding: 3px 10px 2px 10px;
 }
 
 .contenedor-trabajos .trabajo .cancel-icon {
-  width: 50px;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 35px;
   background: none;
   border: none;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  left: 0%;
   color: #f76666;
 }
 /*# sourceMappingURL=style.css.map */
